@@ -1,0 +1,13 @@
+There are many frameworks that can be used for building microservices in Python. Here are a few popular options:
+
+Flask: Flask is a lightweight Python framework for building web applications. It is easy to use and can be used to build simple microservices quickly.
+
+Django: Django is a full-featured Python web framework that can be used to build more complex microservices. It comes with a variety of built-in features and is highly extensible.
+
+Pyramid: Pyramid is another general-purpose Python web framework that is well-suited for building microservices. It is flexible and allows developers to choose the components they want to use, making it a good choice for custom projects.
+
+FastAPI: FastAPI is a modern, fast, and asynchronous Python web framework that is designed specifically for building APIs and microservices. It uses the latest Python features and is easy to learn and use.
+
+Tornado: Tornado is a Python web framework and asynchronous networking library that is designed for building high-concurrency web applications, including microservices.
+
+These are just a few examples, but there are many other frameworks that can be used for building microservices in Python. The choice of framework will depend on the specific requirements of your project.

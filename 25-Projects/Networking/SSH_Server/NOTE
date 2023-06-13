@@ -1,0 +1,19 @@
+It is possible to create an SSH server in Python without using third-party libraries, but it can be quite challenging and time-consuming.
+
+The SSH (Secure Shell) protocol is a widely used network protocol for secure communication over an unsecured network. It provides various services, such as secure remote login, secure file transfer, and secure tunneling. Implementing the SSH protocol from scratch requires a deep understanding of cryptography, network programming, and security best practices.
+
+Here is a high-level overview of how to create an SSH server in Python without using third-party libraries:
+
+Implement the transport layer protocol:
+Implement the packet format and the packet handling logic for the transport layer protocol, which is responsible for establishing and maintaining a secure connection between the client and the server.
+Use a cryptographic library, such as PyCrypto or pycryptodome, to implement the key exchange, encryption, and integrity protection algorithms required by the transport layer protocol.
+Implement the connection-oriented networking logic, such as listening for incoming connections, accepting connections, and closing connections.
+Implement the user authentication protocol:
+Implement the packet format and the packet handling logic for the user authentication protocol, which is responsible for authenticating the client based on various methods, such as public key, password, or keyboard-interactive.
+Use a cryptographic library to implement the authentication algorithms required by the user authentication protocol.
+Implement the user management logic, such as storing and retrieving user accounts, and checking user permissions.
+Implement the connection protocol:
+Implement the packet format and the packet handling logic for the connection protocol, which is responsible for multiplexing multiple channels over a single transport connection, and providing various services, such as shell, exec, or subsystem.
+Implement the service-specific logic for each channel, such as executing commands, transferring files, or forwarding ports.
+Implement the terminal emulation and terminal control logic, if necessary.
+As you can see, creating an SSH server in Python without using third-party libraries requires a significant amount of work and expertise. It is generally recommended to use a third-party library, such as paramiko, that provides a high-level API and handles most of the low-level details for you.

@@ -1,0 +1,54 @@
+# There are several options for building a trading bot in Python. Some popular frameworks and libraries for developing trading bots include:
+
+# ccxt: ccxt is a comprehensive library for trading and accessing market data from various cryptocurrency exchanges. It supports both spot and margin trading and provides a unified API for accessing multiple exchanges.
+
+# Zenbot: Zenbot is an open-source, command-line cryptocurrency trading bot that supports multiple exchanges and strategies. It is written in Node.js, but can be used with Python through the subprocess module.
+
+# Gekko: Gekko is an open-source trading bot that supports multiple exchanges and can be customized with custom plugins and strategies. It is written in JavaScript, but can be used with Python through the subprocess module.
+
+# TensorTrade: TensorTrade is an open-source reinforcement learning framework for building and training trading bots. It is built on top of TensorFlow and provides a flexible API for defining custom trading environments and strategies.
+
+# These are just a few examples of frameworks and libraries that can be used to build a trading bot in Python. The choice of which one to use will depend on your specific needs and requirements.
+
+
+import ccxt
+import time
+
+# Load the exchange
+exchange = ccxt.binance()
+
+# Set the ticker symbols for the assets you want to trade
+symbol1 = "BTC/USDT"
+symbol2 = "ETH/USDT"
+
+# Set the amount of each asset you want to trade
+amount1 = 0.1
+amount2 = 5
+
+# Set the threshold for the price difference between the assets
+threshold = 0.5
+
+while True:
+    # Fetch the current prices of the assets
+    price1 = exchange.fetch_ticker(symbol1)["last"]
+    price2 = exchange.fetch_ticker(symbol2)["last"]
+
+    # Calculate the price difference
+    diff = abs(price1 - price2)
+
+    # Check if the difference is above the threshold
+    if diff > threshold:
+        # Place a market order to trade the assets
+        if price1 > price2:
+            exchange.create_market_sell_order(symbol1, amount1)
+            exchange.create_market_buy_order(symbol2, amount2)
+        else:
+            exchange.create_market_sell_order(symbol2, amount2)
+            exchange.create_market_buy_order(symbol1, amount1)
+
+    # Wait for 30 seconds before checking the prices again
+    time.sleep(30)
+
+
+
+
